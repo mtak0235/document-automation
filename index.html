@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>공장 PC 원격 지원 솔루션 개발 간트 차트</title>
+    <style>
+        /* Mermaid 스타일 */
+        #mermaidChart152 {
+            font-family: sans-serif;
+            font-size: 16px;
+            fill: #333333;
+        }
+
+        #mermaidChart152 .error-icon {
+            fill: #552222;
+        }
+
+        #mermaidChart152 .error-text {
+            fill: #552222;
+            stroke: #552222;
+        }
+
+        #mermaidChart152 .edge-thickness-normal {
+            stroke-width: 2px;
+        }
+
+        #mermaidChart152 .edge-thickness-thick {
+            stroke-width: 3.5px;
+        }
+
+        #mermaidChart152 .edge-pattern-solid {
+            stroke-dasharray: 0;
+        }
+
+        #mermaidChart152 .edge-pattern-dashed {
+            stroke-dasharray: 3;
+        }
+
+        #mermaidChart152 .edge-pattern-dotted {
+            stroke-dasharray: 2;
+        }
+
+        #mermaidChart152 .marker {
+            fill: #333333;
+            stroke: #333333;
+        }
+
+        #mermaidChart152 .marker.cross {
+            stroke: #333333;
+        }
+
+        #mermaidChart152 svg {
+            font-family: sans-serif;
+            font-size: 16px;
+        }
+
+        #mermaidChart152 .mermaid-main-font {
+            font-family: var(--mermaid-font-family, "trebuchet ms", verdana, arial, sans-serif);
+        }
+
+        #mermaidChart152 .exclude-range {
+            fill: #eeeeee;
+        }
+
+        #mermaidChart152 .section {
+            stroke: none;
+            opacity: 0.2;
+        }
+
+        #mermaidChart152 .section0 {
+            fill: rgba(102, 102, 255, 0.49);
+        }
+
+        #mermaidChart152 .section2 {
+            fill: #fff400;
+        }
+
+        #mermaidChart152 .section1,
+        #mermaidChart152 .section3 {
+            fill: white;
+            opacity: 0.2;
+        }
+
+        #mermaidChart152 .sectionTitle0 {
+            fill: #333;
+        }
+
+        #mermaidChart152 .sectionTitle1 {
+            fill: #333;
+        }
+
+        #mermaidChart152 .sectionTitle2 {
+            fill: #333;
+        }
+
+        #mermaidChart152 .sectionTitle3 {
+            fill: #333;
+        }
+
+        #mermaidChart152 .sectionTitle {
+            text-anchor: start;
+            font-family: var(--mermaid-font-family, "trebuchet ms", verdana, arial, sans-serif);
+        }
+
+        #mermaidChart152 .grid .tick {
+            stroke: lightgrey;
+            opacity: 0.8;
+            shape-rendering: crispEdges;
+        }
+
+        #mermaidChart152 .grid .tick text {
+            font-family: sans-serif;
+            fill: #333;
+        }
+
+        #mermaidChart152 .grid path {
+            stroke-width: 0;
+        }
+
+        /* 오늘 날짜 선 숨기기 */
+        #mermaidChart152 .today {
+            stroke: none !important;
+            fill: none !important;
+        }
+
+        #mermaidChart152 .task {
+            stroke-width: 2;
+        }
+
+        #mermaidChart152 .taskText {
+            text-anchor: middle;
+            font-family: var(--mermaid-font-family, "trebuchet ms", verdana, arial, sans-serif);
+        }
+
+        #mermaidChart152 .taskTextOutsideRight {
+            fill: black;
+            text-anchor: start;
+            font-family: var(--mermaid-font-family, "trebuchet ms", verdana, arial, sans-serif);
+        }
+
+        #mermaidChart152 .taskTextOutsideLeft {
+            fill: black;
+            text-anchor: end;
+        }
+
+        #mermaidChart152 .task.clickable {
+            cursor: pointer;
+        }
+
+        #mermaidChart152 .taskText.clickable {
+            cursor: pointer;
+            fill: #003163 !important;
+            font-weight: bold;
+        }
+
+        #mermaidChart152 .taskTextOutsideLeft.clickable {
+            cursor: pointer;
+            fill: #003163 !important;
+            font-weight: bold;
+        }
+
+        #mermaidChart152 .taskTextOutsideRight.clickable {
+            cursor: pointer;
+            fill: #003163 !important;
+            font-weight: bold;
+        }
+
+        #mermaidChart152 .taskText0,
+        #mermaidChart152 .taskText1,
+        #mermaidChart152 .taskText2,
+        #mermaidChart152 .taskText3 {
+            fill: white;
+        }
+
+        #mermaidChart152 .task0,
+        #mermaidChart152 .task1,
+        #mermaidChart152 .task2,
+        #mermaidChart152 .task3 {
+            fill: #8a90dd;
+            stroke: #534fbc;
+        }
+
+        #mermaidChart152 .taskTextOutside0,
+        #mermaidChart152 .taskTextOutside2 {
+            fill: black;
+        }
+
+        #mermaidChart152 .taskTextOutside1,
+        #mermaidChart152 .taskTextOutside3 {
+            fill: black;
+        }
+
+        #mermaidChart152 .active0,
+        #mermaidChart152 .active1,
+        #mermaidChart152 .active2,
+        #mermaidChart152 .active3 {
+            fill: #bfc7ff;
+            stroke: #534fbc;
+        }
+
+        #mermaidChart152 .activeText0,
+        #mermaidChart152 .activeText1,
+        #mermaidChart152 .activeText2,
+        #mermaidChart152 .activeText3 {
+            fill: black !important;
+        }
+
+        #mermaidChart152 .done0,
+        #mermaidChart152 .done1,
+        #mermaidChart152 .done2,
+        #mermaidChart152 .done3 {
+            stroke: grey;
+            fill: lightgrey;
+            stroke-width: 2;
+        }
+
+        #mermaidChart152 .doneText0,
+        #mermaidChart152 .doneText1,
+        #mermaidChart152 .doneText2,
+        #mermaidChart152 .doneText3 {
+            fill: black !important;
+        }
+
+        #mermaidChart152 .crit0,
+        #mermaidChart152 .crit1,
+        #mermaidChart152 .crit2,
+        #mermaidChart152 .crit3 {
+            stroke: #ff8888;
+            fill: red;
+            stroke-width: 2;
+        }
+
+        #mermaidChart152 .activeCrit0,
+        #mermaidChart152 .activeCrit1,
+        #mermaidChart152 .activeCrit2,
+        #mermaidChart152 .activeCrit3 {
+            stroke: #ff8888;
+            fill: #bfc7ff;
+            stroke-width: 2;
+        }
+
+        #mermaidChart152 .doneCrit0,
+        #mermaidChart152 .doneCrit1,
+        #mermaidChart152 .doneCrit2,
+        #mermaidChart152 .doneCrit3 {
+            stroke: #ff8888;
+            fill: lightgrey;
+            stroke-width: 2;
+            cursor: pointer;
+            shape-rendering: crispEdges;
+        }
+
+        #mermaidChart152 .milestone {
+            transform: rotate(45deg) scale(0.8, 0.8);
+        }
+
+        #mermaidChart152 .milestoneText {
+            font-style: italic;
+        }
+
+        #mermaidChart152 .doneCritText0,
+        #mermaidChart152 .doneCritText1,
+        #mermaidChart152 .doneCritText2,
+        #mermaidChart152 .doneCritText3 {
+            fill: black !important;
+        }
+
+        #mermaidChart152 .activeCritText0,
+        #mermaidChart152 .activeCritText1,
+        #mermaidChart152 .activeCritText2,
+        #mermaidChart152 .activeCritText3 {
+            fill: black !important;
+        }
+
+        #mermaidChart152 .titleText {
+            text-anchor: middle;
+            font-size: 18px;
+            fill: #333;
+            font-family: var(--mermaid-font-family, "trebuchet ms", verdana, arial, sans-serif);
+        }
+
+        #mermaidChart152 :root {
+            --mermaid-alt-font-family: sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <h1>공장 PC 원격 지원 솔루션 개발 일정</h1>
+    <div class="mermaid">
+        gantt
+            dateFormat  YYYY-MM-DD
+            title 공장 PC 원격 지원 솔루션 개발 일정
+
+            local서버, 웹 기반 원격 접속 구현 :2025-02-07, 3d
+            운영 서버, 웹 기반 원격 접속 구현         :2025-02-10, 3d
+            웹 인터페이스 디자인 (1차)               :2025-02-12, 2d
+            웹 인터페이스 디자인 (2차)               :2025-02-15, 3d
+            웹 인터페이스 개발               :2025-02-17, 2d
+            웹 인터페이스 배포               :2025-02-19, 1d
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@10.6.1/dist/mermaid.min.js"></script>
+    <script>
+        mermaid.initialize({ startOnLoad: true });
+    </script>
+</body>
+</html>
